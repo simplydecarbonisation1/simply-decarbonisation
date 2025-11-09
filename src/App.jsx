@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Leaf, CalendarDays, HandHeart, Globe2, MapPin, Phone, Mail, Youtube, Facebook, Twitter, Languages, ArrowRight, ExternalLink } from "lucide-react";
+import YoutubeFeed from "./components/YoutubeFeed"; // Import the new YoutubeFeed component
 
 // --- Simple in-file i18n (English default). 
 // NOTE: Mandinka & Wolof strings are placeholders for now; please replace with approved translations.
@@ -61,19 +62,29 @@ const strings = {
           bio: "Human rights defender; Accounts operative.",
         },
         {
-          name: "Abdou Manneh",
-          role: "Member",
-          bio: "BSc Electrical Engineering; Green energy consultant.",
+          name: "Mr Abdou Manneh",
+          role: "Green Energy Consultant",
+          bio: "BSc Electrical Engineering, Energy System Manager and founder of Success connect. Environmental activists.",
         },
         {
-          name: "Famara Darbo",
-          role: "Member",
-          bio: "Local Coordinator; Sport fishing expert (Gambia/Senegal/Guinea‑Bissau).",
+          name: "Mr Famara Darbo",
+          role: "Resident Project Director",
+          bio: "Resident spot fishing expert in The Gambia, Senegal and Guinea Bissau. Among the founders of The Gambia Angler Association and Environmental and climate change advocator.",
         },
         {
-          name: "Oumie Bah",
+          name: "Ms Oumie Bah",
+          role: "Local Office Administrator",
+          bio: "Experience office practitioner and administrator.",
+        },
+        {
+          name: "Mr Kebba Owens",
           role: "Member",
-          bio: "Member.",
+          bio: "Retired British Soldier, Pharmacist and Climate change advocator",
+        },
+        {
+          name: "Mr Saikou Manneh",
+          role: "Member",
+          bio: "MA Human Resources Management and BSc in Tourism. Environment and Climate change activists",
         },
       ],
     },
@@ -496,14 +507,8 @@ export default function App() {
 
           <div className="rounded-2xl border p-6">
             <div className="font-medium mb-3">{t.resources.gallery}</div>
-            <div className="aspect-video rounded-xl overflow-hidden">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="YouTube video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+            <div>
+              <YoutubeFeed />
             </div>
           </div>
         </div>
